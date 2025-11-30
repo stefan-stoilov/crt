@@ -1,0 +1,30 @@
+{
+  "name": "@crt/db",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {
+    "db:push": "drizzle-kit push",
+    "db:generate": "drizzle-kit generate"
+  },
+  "devDependencies": {
+    "drizzle-kit": "^0.31.2",
+    "@crt/config": "workspace:*"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "drizzle-orm": "catalog:",
+    "@libsql/client": "catalog:",
+    "libsql": "catalog:",
+    "dotenv": "catalog:",
+    "zod": "^4.1.11"
+  }
+}
