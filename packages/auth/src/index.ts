@@ -1,10 +1,10 @@
-import { betterAuth, type BetterAuthOptions } from "better-auth";
-import { drizzleAdapter } from "better-auth/adapters/drizzle";
-import { polar, checkout, portal } from "@polar-sh/better-auth";
-import { polarClient } from "./lib/payments";
+import { env } from "cloudflare:workers";
 import { db } from "@crt/db";
 import * as schema from "@crt/db/schema/auth";
-import { env } from "cloudflare:workers";
+import { checkout, polar, portal } from "@polar-sh/better-auth";
+import { type BetterAuthOptions, betterAuth } from "better-auth";
+import { drizzleAdapter } from "better-auth/adapters/drizzle";
+import { polarClient } from "./lib/payments";
 
 export const auth = betterAuth<BetterAuthOptions>({
 	database: drizzleAdapter(db, {
